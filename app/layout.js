@@ -2,7 +2,7 @@ import Logo from "./components/Logo";
 import Navigation from "./components/Navigation";
 
 export const metadata = {
-	title: "Te Wild Oasis",
+	title: "The Wild Oasis",
 };
 
 export default function RootLayout({ children }) {
