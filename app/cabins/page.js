@@ -1,12 +1,15 @@
 import CabinCard from "@/app/_components/CabinCard";
+import { getCabins } from "../_lib/data-service";
+import { revalidatePath } from "next/cache";
 
 export const metadata = {
 	title: "Cabins",
 };
 
-export default function Page() {
-	// CHANGE
-	const cabins = [];
+export default async function Page() {
+	const cabins = await getCabins();
+	console.log(cabins);
+	revalidatePath("/cabins"); // changed data in supabse doesn't show, so to get new data, use revalidatePath
 
 	return (
 		<div>
