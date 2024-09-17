@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 
 async function CabinList() {
 	const cabins = await getCabins();
-	revalidatePath("/cabins"); // changed data in supabse doesn't show, so to get new data, use revalidatePath
+	// revalidatePath("/cabins"); // changed data in supabse doesn't show, so to get new data, use revalidatePath (but this prevents static rendering)
 	if (!cabins.length) return null;
 
 	return (
