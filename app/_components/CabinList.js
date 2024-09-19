@@ -1,8 +1,10 @@
 import CabinCard from "@/app/_components/CabinCard";
 import { getCabins } from "@/app/_lib/data-service";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function CabinList() {
+	noStore();
 	const cabins = await getCabins();
 	// revalidatePath("/cabins"); // changed data in supabse doesn't show, so to get new data, use revalidatePath (but this prevents static rendering)
 	if (!cabins.length) return null;
