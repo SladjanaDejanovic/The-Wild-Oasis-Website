@@ -4,7 +4,8 @@ import { getCabins } from "@/app/_lib/data-service";
 import { unstable_noStore as noStore } from "next/cache";
 
 async function CabinList({ filter }) {
-	noStore();
+	// noStore();
+
 	const cabins = await getCabins();
 	// revalidatePath("/cabins"); // changed data in supabse doesn't show, so to get new data, use revalidatePath (but this prevents static rendering)
 	if (!cabins.length) return null;
@@ -24,7 +25,7 @@ async function CabinList({ filter }) {
 
 	if (filter === "large")
 		displayedCabins = cabins.filter(
-			(cabin) => cabin.maxCapacity <= 8
+			(cabin) => cabin.maxCapacity >= 8
 		);
 
 	return (
