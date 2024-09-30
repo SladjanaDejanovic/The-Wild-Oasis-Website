@@ -13,9 +13,15 @@ const authConfig = {
 			return !!auth?.user; //!! turns the value to boolean
 		},
 	},
+	pages: {
+		signIn: "/login",
+	},
 };
 
+//auth function to retrieve current session
 export const {
 	auth,
+	signIn,
+	signOut,
 	handlers: { GET, POST },
 } = NextAuth(authConfig);
