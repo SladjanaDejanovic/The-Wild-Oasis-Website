@@ -37,9 +37,8 @@ const authConfig = {
 	},
 };
 
-//auth function to retrieve current session
 export const {
-	auth,
+	auth, //auth function to retrieve current session
 	signIn,
 	signOut,
 	handlers: { GET, POST },
