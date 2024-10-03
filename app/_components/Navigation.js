@@ -4,6 +4,7 @@ import { auth } from "../_lib/auth";
 export default async function Navigation() {
 	const session = await auth();
 	console.log(session);
+
 	return (
 		<nav className="z-10 text-xl">
 			<ul className="flex gap-16 items-center">
@@ -33,7 +34,7 @@ export default async function Navigation() {
 								className="h-8 rounded-full"
 								src={session.user.image}
 								alt={session.user.name}
-								refferPolicy="no-referrer"
+								refferpolicy="no-referrer"
 							/>
 							<span>Guest area</span>
 						</Link>
